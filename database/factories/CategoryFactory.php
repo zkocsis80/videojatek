@@ -17,8 +17,18 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        return [
-            'name' => $this->faker->name()
+    // make the return unique and random, so that the categories are not repeated in the database.    
+    return [
+            'name' => fake()->unique()->randomElement([
+            'Action',
+            'Adventure',
+            'RPG',
+            'Strategy',
+            'Simulation',
+            'Puzzle',
+            'Sports',
+            'Racing',
+        ])
         ];
     }
 }

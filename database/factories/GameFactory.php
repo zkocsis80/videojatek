@@ -19,7 +19,7 @@ class GameFactory extends Factory
     public function definition(): array
     {
         return [
-            'title'=> $this->faker->word(),
+            'title'=> fake()->colorName() . ' ' . fake()->word(),
             'release_year' => $this->faker->numberBetween(1980, 2023),
             'price' => $this->faker->randomFloat(2, 10, 100),
             'category_id' => $this->faker->numberBetween(1, 5)
